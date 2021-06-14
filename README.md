@@ -50,3 +50,6 @@
 | user   |  references |  null: false , foreign_key: true|
 | skill  |  references |  null: false , foreign_key: true|
 
+### Association 
+- has_many :users
+- has_many :skills
