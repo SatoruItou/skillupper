@@ -1,0 +1,26 @@
+.wrapper {
+  background-color: aqua;
+}
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: yellow;
+
+}
+
+.container {
+  display: flex;
+}
+
+.side_bar {
+  background-color: #233141;
+  width: 250px;
+  height: 100vh;
+}
+
+.content {
+  background-color: brown;
+  width:  85%;
+  height: 100vh;
+  
+}
