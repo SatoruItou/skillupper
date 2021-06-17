@@ -50,6 +50,7 @@
 | Column     |  Type   |  Options     |
 | --------   |  ------ |  ----------- |
 | name       |  string |  null: false |
+| image      | 
 | genre_id|  integer  |  null: false, active_hash |
 | level   |  integer |  null: false |
 | can      |  text       |  null: false   |
