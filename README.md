@@ -25,6 +25,12 @@
 # AWS構造
 
 # 機能、非機能一覧（gem）
+・devise
+・mini_magick
+・image_processing, ~> 1.2
+
+
+
 
 # テスト
 
