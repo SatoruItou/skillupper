@@ -9,9 +9,17 @@
       <div class="menu">
         <ul>
           <li>menu</li>
-          <li>nicknameさん</li>
-          <li><%= link_to '新規登録', new_user_registration_path, class: "sign_up" %> </li>
-          <li>マイページ/ログアウト</li>
+        </ul>
+
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %>さん /<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <% else %>
+            <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, class: "sign_up" %> </li>
+          <% end %>
+        </ul>
+        <ul>
           <li>スキル一覧</li>
           <li>バディ検索</li>
           <li>バディチャット</li>
@@ -19,6 +27,7 @@
       </div>
     </div>
     <div class="content">
+      <%= link_to "スキルを追加する",   new_skill_path, class:"skill" %>
     </div>
   </div>
 

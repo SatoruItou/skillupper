@@ -10,5 +10,5 @@ class User < ApplicationRecord
     validates :dream
     validates :birth
   end
-
+  belongs_to :skill
 end
