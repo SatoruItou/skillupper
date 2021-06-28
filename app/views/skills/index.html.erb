@@ -30,7 +30,22 @@
       <%= link_to "スキルを追加する",   new_skill_path, class:"skill" %>
 
       <% @skills.each do |skill| %>
-        <%= image_tag(skill.image, class: "skill-img") %>
+      <li class='list'>
+       
+        <div class='skill-img-content'>
+          <%= image_tag(skill.image, class: "skill-img") %>
+        </div>
+        <div class='skill-info'>
+          <h2 class='skill-name'>
+            <%= skill.name %>
+          </h2>
+          <h3 class=>
+          <div class='skill-level'>
+            <span><%= skill.level %>Level</span>
+          </div>
+          
+        </div>
+      </li>
       <% end %>
 
     </div>

@@ -1,7 +1,7 @@
 class SkillsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @skill = Skill.all.order('created_at DESC')
+    @skills = Skill.all.order('created_at DESC')
   end
 
   def new
