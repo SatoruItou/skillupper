@@ -1,0 +1,61 @@
+<div class="skills-set-contents">
+  <header class="skills-set-header">
+    <h1 class="skills-set-title">スキル登録画面</h1>
+  </header>
+
+  <div class="skill-set-main">
+    <h2 class="skills-set-title">スキルの設定</h2>
+
+    <%= form_with(model: @skill, local: true) do |f| %>
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text"> 
+        スキル画像
+        <span class="indispensable">任意</span>
+      </div>
+      <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"skii-image" %>
+      </div>
+    </div>
+
+    <div class="new-skills">
+      <div class="weight-bold-text">
+        スキル名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"skills-text", id:"skill-name", placeholder:"スキル名（必須40文字まで）例）HTML", maxlength:"40" %>
+      
+      <div class="skill-explain">
+        <div class="weight-bold-text">
+          スキルのジャンル
+          <span class="indispensable">必須</span>
+        </div>
+      <%= f.text_area :genre, class:"skills-text", id:"skill-genre", placeholder:"スキルのジャンル（必須40文字まで）例）IT"%>
+        <div class="weight-bold-text">
+          何ができるようになりたい？
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :can, class:"skill-text", id:"skill-can", placeholder:"何ができるようになりたい？（必須 100文字まで）例）仕様書を見て、ヒントなしにコーディングできるようになりたい。"%>
+      </div>
+    </div>
+
+    <div class="skill-content">
+      <div class="weight-bold-text">
+        <span>スキルレベル<br>(1~100Level)</span>
+        <span class="indispensable">必須</span>
+      </div>
+      <span class="skill-level">Level.</span>
+      <%= f.text_field :level, class:"level-input", id:"skill-level", placeholder:"例）50" %>
+    </div>
+
+    <div class="registration-btn-contents">
+      <%= f.submit "登録する" , class:"registration-btn" %>
+      <%= link_to '戻る', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>

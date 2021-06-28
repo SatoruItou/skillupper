@@ -28,6 +28,11 @@
     </div>
     <div class="content">
       <%= link_to "スキルを追加する",   new_skill_path, class:"skill" %>
+
+      <% @skills.each do |skill| %>
+        <%= image_tag(skill.image, class: "skill-img") %>
+      <% end %>
+
     </div>
   </div>
 
