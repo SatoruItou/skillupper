@@ -29,11 +29,12 @@
   position: relative;
 }
 
-.skill-img {
-  width: 15vh;
-  height: 15vh;
-}
-
 .list {
   background-color: aqua;
 }
+
+.skill-img {
+  width: 30vh;
+  height: 30vh;
+}
+

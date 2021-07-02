@@ -20,7 +20,7 @@ class SkillsController < ApplicationController
   private
 
   def skill_params
-    params.require(:skill).permit(:image, :name, :genre, :level, :can).merge(user_id: current_user.id)
+    params.require(:skill).permit(:image, :name, :genre, :level, :experience_point, :can).merge(user_id: current_user.id)
   end
 
 end

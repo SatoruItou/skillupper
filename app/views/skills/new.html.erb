@@ -45,11 +45,13 @@
 
     <div class="skill-content">
       <div class="weight-bold-text">
-        <span>スキルレベル<br>(1~100Level)</span>
+        <span>スキルレベル<br>(1~100Level)</span> 
         <span class="indispensable">必須</span>
       </div>
       <span class="skill-level">Level.</span>
-      <%= f.text_field :level, class:"level-input", id:"skill-level", placeholder:"例）50" %>
+      <%#プルダウンで選択できるようにする。%>
+      <%= f.text_field :level, class:"level-input", id:"skill-level", placeholder:"例）50" %> 
+      
     </div>
 
     <div class="registration-btn-contents">
