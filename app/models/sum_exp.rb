@@ -1,0 +1,2 @@
+class SumExp < ApplicationRecord
+end

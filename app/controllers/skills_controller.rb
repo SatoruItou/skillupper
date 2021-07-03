@@ -15,12 +15,14 @@ class SkillsController < ApplicationController
     else
       render :new
     end
+    
+  
   end
 
   private
 
   def skill_params
-    params.require(:skill).permit(:image, :name, :genre, :level, :experience_point, :can).merge(user_id: current_user.id)
+    params.require(:skill).permit(:image, :name, :genre, :level, :exp, :can).merge(user_id: current_user.id)
   end
 
 end
