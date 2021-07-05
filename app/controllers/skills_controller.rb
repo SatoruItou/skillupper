@@ -15,9 +15,12 @@ class SkillsController < ApplicationController
     else
       render :new
     end
-    
-  
   end
+
+  def exp
+
+  end
+    
 
   private
 

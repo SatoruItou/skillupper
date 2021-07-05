@@ -43,7 +43,9 @@
           <div class='skill-level'>
             <span><%= skill.level %>Level</span>
           </div>
-
+          <div class='skill-menu'>
+            <%= link_to "経験値の追加", skill_sum_exps_path(@skill.id), class:"sum_exp-btn" %> 
+          </div>
         </div>
       </li>
       <% end %>
