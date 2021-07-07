@@ -5,6 +5,9 @@ class CreateSumExps < ActiveRecord::Migration[6.0]
       t.integer :concentration_id, null: false
       t.integer :technique_id, null: false
       t.integer :out_put_id, null: false
+      t.integer :exp_point
+      t.references :skill, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

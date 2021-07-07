@@ -30,8 +30,9 @@
       <%= link_to "スキルを追加する",   new_skill_path, class:"skill" %>
 
       <% @skills.each do |skill| %>
+          
       <li class='list'>
-       
+  
         <div class='skill-img-content'>
           <%= image_tag(skill.image, class: "skill-img") %>
         </div>
@@ -43,10 +44,10 @@
           <div class='skill-level'>
             <span><%= skill.level %>Level</span>
           </div>
-          <div class='skill-menu'>
-            <%= link_to "経験値の追加", skill_sum_exps_path(@skill.id), class:"sum_exp-btn" %> 
-          </div>
         </div>
+        <div class='skill-menu'>
+            <%= link_to "経験値の追加", new_skill_sum_exp_path(skill.id), class:"sum_exp-btn" %> 
+          </div>
       </li>
       <% end %>
 
