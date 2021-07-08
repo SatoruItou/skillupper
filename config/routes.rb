@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "skills#index"
   resources :users, only: [:new, :delete]
   resources :skills, only: [:new, :create] do
-    resources :sum_exps, only: [:index, :new]
+    resources :sum_exps, only: [:new, :create]
   end
 end

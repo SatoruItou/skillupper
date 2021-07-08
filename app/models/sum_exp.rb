@@ -1,6 +1,6 @@
 class SumExp < ApplicationRecord
   with_options presence: true do
-    validates :time
+    
     validates :exp_point
   end
   has_many :skills
@@ -9,11 +9,12 @@ class SumExp < ApplicationRecord
   belongs_to :technique
   belongs_to :concentration
   belongs_to :out_put
-
+  belongs_to :minute
   with_options numericality: { other_than: 1 } do
     validates :conventration_id
     validates :technique_id
     validates :out_put_id
+    validates :minute_id
   end
 
 end
