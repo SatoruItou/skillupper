@@ -17,8 +17,53 @@
 
   <div class='skills-exp-main'>
     <h2 class='sum_exp-title'>フォームを入力して経験値を取得</h2>
-    <%= form_with(model: @sum_exp, local: true) do |f| %>
+    <%= form_with model: @sum_exp, url:skill_sum_exps_path, id:'charge-form', class:'transaction-form-wrap', local: true do |f| %>
 
+  <%#= render 'shared/error_message', model: f.object %>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">学習時間</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:minute_id, Minute.all, :id, :name, data: {}, {class:"select-box", id:"minute"}) %>
+    </div>
+   
+   <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">集中力</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:concentration_id, Concentration.all, :id, :name, {}, {class:"select-box", id:"concentration"}) %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">新しい技術の獲得</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:technique_id, Technique.all, :id, :name, {}, {class:"select-box", id:"technique"}) %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アウトプット</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:out_put_id, OutPut.all, :id, :name, {}, {class:"select-box", id:"out_put"}) %>
+    </div>
+    
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">獲得経験値</label>
+      </div>
+      <%= f.hidden_field(:exp_point, id: "total_exp") %>
+    </div>
+    
+    <div class='sum-exp-btn'>
+      <%= f.submit "経験値を追加", class:"sum-exp-red-btn" %>
+    </div>
+    <% end %>
+   
     
   </div>
 </div>
