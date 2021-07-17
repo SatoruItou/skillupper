@@ -7,6 +7,13 @@ const selectMinute = document.getElementById("minute");
     const minuteSelectBox = document.getElementById("minute");
     const dataMinute = minuteSelectBox.options[ minuteSelectBox.selectedIndex].getAttribute("data-multiple");
     console.log(dataMinute);
-  })
+
+    
+
+    
+    const displayTotalExp = totalExp.innerHTML
+
+    document.getElementById("total_exp").value = displayTotalExp;
+  });
 }
 window.addEventListener("load", exp)
