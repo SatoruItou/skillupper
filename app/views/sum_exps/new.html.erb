@@ -44,21 +44,23 @@
         <label class="form-text">新しい技術の獲得</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:technique_id, Technique.all, :id, :name, {}, {class:"select-box", id:"technique"}) %>
+        <% technique_options = Technique.order(:id).map { |c| [c.name, c.id, data:{ multiple: c.multiple}] }%>
+      <%= f.select(:technique_id, technique_options, {}, {class:"select-box", data:{select:0}, id:"technique"}) %>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">アウトプット</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:out_put_id, OutPut.all, :id, :name, {}, {class:"select-box", id:"out_put"}) %>
+      <% output_options = OutPut.order(:id).map { |c| [c.name, c.id, data:{ multiple: c.multiple}] }%>
+      <%= f.select(:out_put_id, output_options,  {}, {class:"select-box", data:{select:0}, id:"out_put"}) %>
     </div>
     
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">獲得経験値</label>
       </div>
-      <%= f.hidden_field(:exp_point, id: "total_exp") %>
+      <%= f.text_area(:exp_point, id: "total_exp") %>
     </div>
     
     <div class='sum-exp-btn'>
