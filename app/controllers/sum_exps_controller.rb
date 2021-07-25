@@ -18,7 +18,7 @@ class SumExpsController < ApplicationController
   private
 
   def exp_params
-  params.require(:sum_exp).permit(:minute_id, :concentration_id, :technique_id, :out_put_id, :exp_point).merge(skill_id: params[:skill_id], user_id: current_user.id)
+  params.permit(:minute_id, :concentration_id, :technique_id, :out_put_id, :exp_point).merge(skill_id: params[:skill_id], user_id: current_user.id )
   end
 end
 

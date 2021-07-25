@@ -13,7 +13,7 @@ class SumExp < ApplicationRecord
   belongs_to :minute
   
   with_options numericality: { other_than: 1 } do
-    validates :conventration_id
+    validates :concentration_id
     validates :technique_id
     validates :out_put_id
     validates :minute_id
