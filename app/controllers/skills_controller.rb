@@ -17,7 +17,9 @@ class SkillsController < ApplicationController
     end
   end
 
-  def exp
+  def levelUp
+    skill = Skill(params[:id])
+    sum_exp = SumExp.find
 
   end
     

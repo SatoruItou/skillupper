@@ -32,9 +32,9 @@ const selectOutPut = document.getElementById("out_put");
  const total = ( minuteMultiple * concentrationMultiple * techniqueMultiple * outPutMultiple);
 
  totalExp.innerHTML = total;
- displayExpTotal = totalExp.innerHTML;
+ 
 
- document.getElementById("total_exp").value = displayExpTotal;
+ document.getElementById("total_exp").value =  totalExp.innerHTML;
 });
 });
 });
