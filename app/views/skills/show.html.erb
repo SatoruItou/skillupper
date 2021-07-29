@@ -1,0 +1,16 @@
+<%#= render "shared/header" %>
+<div class="skill-show">
+  <div class="skill-box">
+    <h2 class="name">
+    <%= @skill.name%>
+    </h2>
+    <div class="skill-img-content">
+      <%= image_tag @skill.image ,class:"skill-img" %>
+    </div>
+      <% if current_user.id == @skill.user_id %>
+        <%= link_to "編集", edit_skill_path(@skill.id), method: :get, class: "skill-red-btn" %>
+        <%= link_to "削除", skill_path(@skill.id), method: :delete , class: "skill-destroy" %>
+      <% end %>
+  </div>
+  <%= link_to '戻る', root_path, class:"back-btn" %>
+</div>

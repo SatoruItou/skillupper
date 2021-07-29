@@ -1,5 +1,6 @@
 class SkillsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :set_skill, only: [:show, :edit, :destroy]
   def index
     @skills = Skill.all.order('created_at DESC')
   end
@@ -10,7 +11,6 @@ class SkillsController < ApplicationController
 
   def create 
     @skill = Skill.new(skill_params)
-    binding.pry
     if @skill.save
       redirect_to root_path
     else
@@ -18,6 +18,16 @@ class SkillsController < ApplicationController
     end
   end
 
+  def show 
+  end
+
+  def edit
+  end
+
+  def destroy
+    @skill.delete
+    redirect_to root_path
+  end
 
   
     
@@ -28,4 +38,7 @@ class SkillsController < ApplicationController
     params.require(:skill).permit(:image, :name, :genre, :can).merge(user_id: current_user.id)
   end
 
+  def set_skill
+    @skill = Skill.find(params[:id])
+  end
 end

@@ -32,7 +32,7 @@
       <% @skills.each do |skill| %>
           
       <li class='list'>
-  
+        <%= link_to skill_path(skill.id) do %>
         <div class='skill-img-content'>
           <%= image_tag(skill.image, class: "skill-img") %>
         </div>
@@ -40,7 +40,7 @@
           <h1 class='skill-name'>
             <%= skill.name %>
           </h1>
-          
+        <% end %>
          
       
         <div class='skill-menu'>
