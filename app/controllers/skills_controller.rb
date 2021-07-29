@@ -10,6 +10,7 @@ class SkillsController < ApplicationController
 
   def create 
     @skill = Skill.new(skill_params)
+ 
     if @skill.save
       redirect_to root_path
     else
@@ -17,11 +18,8 @@ class SkillsController < ApplicationController
     end
   end
 
-  def levelUp
-    skill = Skill(params[:id])
-    sum_exp = SumExp.find
 
-  end
+  
     
 
   private

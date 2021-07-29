@@ -7,7 +7,9 @@ class SumExpsController < ApplicationController
   def create
     @skill = Skill.find(params[:skill_id])
     @sum_exp = SumExp.new(exp_params)
-    if @sum_exp.save 
+    if @sum_exp.valid?
+      level_up 
+      @sum_exp.save 
       redirect_to root_path
     else
       render :new
@@ -19,6 +21,25 @@ class SumExpsController < ApplicationController
 
   def exp_params
   params.permit(:minute_id, :concentration_id, :technique_id, :out_put_id, :exp_point).merge(skill_id: params[:skill_id], user_id: current_user.id )
+  end
+
+  def level_up
+    skill = Skill.find(params[:skill_id])
+    sum_exp = SumExp.find(params[:skill_id])
+    totalExp = skill.exp
+    totalExp += sum_exp.exp_point
+    
+    skill.exp = totalExp
+    
+    skill.update(exp: totalExp)
+    
+    levelSetting = LevelSetting.find_by(level: skill.level + 1);
+      if levelSetting.experience_point <= skill.exp
+        skill.level = skill.level + 1
+        skill.update(level: skill.level)
+      else
+        render :new
+      end
   end
 end
 

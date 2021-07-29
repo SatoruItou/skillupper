@@ -26,47 +26,11 @@
         <label class="form-text">学習時間</label>
         <span class="indispensable">必須</span>
       </div>
-      <% minute_options = Minute.order(:id).map { |c| [c.name, c.id, data:{ multiple: c.multiple}] }%>
-      <%= f.select(:minute_id, minute_options, {}, {class:"select-box", data:{select:0}, id:"minute"}) %>
-    </div>
-   
-   <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">集中力</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <% concentration_options = Concentration.order(:id).map { |c| [c.name, c.id, data:{ multiple: c.multiple}] }%>
-      <%= f.select(:concentration_id, concentration_options,  {}, {class:"select-box", data:{select:0}, id:"concentration"}) %>
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">新しい技術の獲得</label>
-        <span class="indispensable">必須</span>
-      </div>
-        <% technique_options = Technique.order(:id).map { |c| [c.name, c.id, data:{ multiple: c.multiple}] }%>
-      <%= f.select(:technique_id, technique_options, {}, {class:"select-box", data:{select:0}, id:"technique"}) %>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">アウトプット</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <% output_options = OutPut.order(:id).map { |c| [c.name, c.id, data:{ multiple: c.multiple}] }%>
-      <%= f.select(:out_put_id, output_options,  {}, {class:"select-box", data:{select:0}, id:"out_put"}) %>
-    </div>
-    
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">獲得経験値</label>
-      
-      </div>
-      <%= f.text_area :exp_point ,  id: "total_exp"   %>
-      
+      <%= f.number_field (:minute, id:"minute") %>
     </div>
     
     <div class='sum-exp-btn'>
-      <%= f.submit "経験値を追加", class:"sum-exp-red-btn" %>
+      <%= f.submit "学習時間を追加する", class:"sum-exp-red-btn" %>
     </div>
     <% end %>
    

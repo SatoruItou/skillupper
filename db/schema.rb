@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(version: 2021_07_04_125406) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "level_settings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "level"
-    t.integer "experience_point"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "genre", null: false
@@ -53,11 +46,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_125406) do
   end
 
   create_table "sum_exps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "minute_id", null: false
-    t.integer "concentration_id", null: false
-    t.integer "technique_id", null: false
-    t.integer "out_put_id", null: false
-    t.integer "exp_point"
+    t.integer "minute", null: false
     t.bigint "skill_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

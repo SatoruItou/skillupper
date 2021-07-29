@@ -1,2 +1,0 @@
-class LevelSetting < ApplicationRecord
-end
