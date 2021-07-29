@@ -40,13 +40,11 @@
           <h1 class='skill-name'>
             <%= skill.name %>
           </h1>
-          <h3 class=>
-          <div class='skill-level'>
-            <span><%= skill.level %>Level</span>
-          </div>
-        </div>
+          
+         
+      
         <div class='skill-menu'>
-            <%= link_to "経験値の追加", new_skill_sum_exp_path(skill.id), class:"sum_exp-btn" %> 
+            <%#= link_to "経験値の追加", new_skill_sum_exp_path(skill.id), class:"sum_exp-btn" %> 
           </div>
       </li>
       <% end %>

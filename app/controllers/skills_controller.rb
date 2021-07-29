@@ -10,7 +10,7 @@ class SkillsController < ApplicationController
 
   def create 
     @skill = Skill.new(skill_params)
- 
+    binding.pry
     if @skill.save
       redirect_to root_path
     else
@@ -25,7 +25,7 @@ class SkillsController < ApplicationController
   private
 
   def skill_params
-    params.require(:skill).permit(:image, :name, :genre, :level, :exp, :can).merge(user_id: current_user.id)
+    params.require(:skill).permit(:image, :name, :genre, :can).merge(user_id: current_user.id)
   end
 
 end

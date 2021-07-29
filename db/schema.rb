@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 2021_07_04_125406) do
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "genre", null: false
-    t.integer "level", default: 1
-    t.integer "exp", default: 0
     t.string "can", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
