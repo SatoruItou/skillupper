@@ -3,9 +3,10 @@ class Skill < ApplicationRecord
     validates :name
     validates :genre
     validates :image
+    
   end
 
   belongs_to :user
   has_one_attached :image
-  #belongs_to :sum_exp
+  has_many :sum_exps
 end

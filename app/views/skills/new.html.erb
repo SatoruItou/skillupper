@@ -41,6 +41,11 @@
         </div>
         <%= f.text_area :can, class:"skill-text", id:"skill-can", placeholder:"何ができるようになりたい？（必須 100文字まで）例）仕様書を見て、ヒントなしにコーディングできるようになりたい。"%>
       </div>
+      <div class-="weight-bold-text">
+        学習時間
+        <span class="indispensable">登録直後は0からです</span>
+        <%= f.number_field :total_minute, class:"skill-text", id:"skill-total-minute" %>
+      </div>
     </div>
 
 

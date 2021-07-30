@@ -8,10 +8,7 @@
             <h1 class='skill-name'>
               <%= @skill.name %>
             </h1>
-            <h3 class=>
-            <div class='skill-level'>
-              <span><%= @skill.level %>Level</span>
-            </div>
+            
           </div>
   </li>
 
@@ -26,7 +23,7 @@
         <label class="form-text">学習時間</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.number_field (:minute, id:"minute") %>
+      <%= f.number_field :minute, id:"minute" %>
     </div>
     
     <div class='sum-exp-btn'>

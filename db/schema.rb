@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_125406) do
     t.string "name", null: false
     t.string "genre", null: false
     t.string "can", null: false
+    t.integer "total_minute", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
