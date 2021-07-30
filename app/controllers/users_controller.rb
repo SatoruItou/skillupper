@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = User.find(params[:id])
+    @skills = @user.skills
   end
 
   def edit

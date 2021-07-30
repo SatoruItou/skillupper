@@ -5,8 +5,18 @@
         <%="#{@user.nickname}さんの登録情報"%>
       </h2>
       <h3 class="form-header-text">
-      <%= link_to "ユーザー登録情報を編集する", edit_user_path(current_user) %>
+      <%= link_to "ユーザー登録情報を編集する", edit_user_registration_path(current_user) %>
       </h3>
+      <%= @user.nickname %>
+      <%= @user.birth%>
+      <%= @user.dream %>
     </div>
   </div>
+  <div class="skill-content">
+    <% @skills.each do |skill| %>
+    <%= skill.name %>
+    <%= image_tag(skill.image, class: "skill-image") %>
+    <% end %>
+  </div>
+  <%= link_to '戻る', root_path %>
 </div>
