@@ -7,8 +7,9 @@ class SumExpsController < ApplicationController
 
   def create
     @sum_exp = SumExp.new(exp_params)
- 
-    #sum_minute
+    @skill = Skill.find(params[:skill_id])
+
+    sum_minute
     if  @sum_exp.save 
       redirect_to root_path
     else
@@ -25,19 +26,19 @@ class SumExpsController < ApplicationController
     params.require(:sum_exp).permit(:minute).merge(skill_id: params[:skill_id])
   end
 
-  # def sum_minute
-  #   skill = Skill.find(params[:skill_id])
-  #   sum_exp = SumExp.find(params[:sum_exp_id])
-
-  #   totalMinute = skill.total_minute
-
-  #   totalMinute = sum_exp.minute
-
-  #   skill.total_minute = totalMinute
-  #   skill.update(total_minute: totalMinute)
+  def sum_minute
+    skill = Skill.find(params[:skill_id])
     
 
-  # end
+    totalMinute = skill.total_minute
+
+    totalMinute += @sum_exp.minute
+
+    skill.total_minute = totalMinute
+    skill.update(total_minute: totalMinute)
+    
+
+  end
   
 
   

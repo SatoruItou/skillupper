@@ -32,19 +32,23 @@
    
       <li class='list'>
          <% @skills.each do |skill| %>
-        <%= skill.user.nickname %>
+         <%= skill.user.nickname %>
           <%= link_to skill_path(skill.id) do %>
-        <div class='skill-img-content'>
-          <%= image_tag(skill.image, class: "skill-img") %>
-        </div>
-        <div class='skill-info'>
-          <h1 class='skill-name'>
-            <%= skill.name %>
-          </h1>
-        <% end %>
+            <div class='skill-img-content'>
+             <%= image_tag(skill.image, class: "skill-img") %>
+            </div>
+            <div class='skill-info'>
+            <h1 class='skill-name'>
+              <%= skill.name %>
+             </h1>
+          <% end %>
       
+      <h2 class='skill-total-time'>
+      学習時間
+          <%= skill.total_minute %>
+          分
+          </h2>
          
-      
         <div class='skill-menu'>
             <%= link_to "経験値の追加", new_skill_sum_exp_path(skill.id), class:"sum_exp-btn" %> 
           </div>
