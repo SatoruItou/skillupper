@@ -8,13 +8,13 @@
             <h1 class='skill-name'>
               <%= @skill.name %>
             </h1>
-            
+
           </div>
   </li>
 
   <div class='skills-exp-main'>
     <h2 class='sum_exp-title'>フォームを入力して経験値を取得</h2>
-    <%= form_with model: @sum_exp, url:skill_sum_exps_path, id:'charge-form', class:'transaction-form-wrap', local: true do |f| %>
+    <%= form_with model: @sum_exp, url: skill_sum_exps_path,  class:'transaction-form-wrap', local: true do |f| %>
 
   <%#= render 'shared/error_message', model: f.object %>
 

@@ -31,6 +31,7 @@
 
 .list {
   background-color: aqua;
+  list-style: none;
 }
 
 .skill-img {

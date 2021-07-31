@@ -3,6 +3,6 @@ class SumExp < ApplicationRecord
     validates :minute 
   end
   belongs_to :skill
-  belongs_to :user
+ 
 
 end
