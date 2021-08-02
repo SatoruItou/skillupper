@@ -1,0 +1,15 @@
+
+.side_bar {
+  background-color: #d3d5d6;
+  width: 250px;
+  height: 100vh;  
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu {
+  font-weight: bold;
+  font-size: 32px;
+}

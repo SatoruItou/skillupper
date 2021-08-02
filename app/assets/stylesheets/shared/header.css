@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+
+
+.title {
+  font-family: serif;
+  width: auto;
+  border-style: outset;
+  text-align: center;
+  background-color: #eaf6fd;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 10vw;
+  display: flex;
+  flex-direction: column;
+  background-image: url(header/sky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 90%;
+  
+}
+
+.header-lists { 
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  flex-direction: column;
+  background-color: #eaf6fd;
+  padding: 2px;
+}
+
+.user-nickname {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+}
+
+.logout {
+  text-decoration: none;
+  line-height: 32px;
+  margin-left: 1vw;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
