@@ -1,8 +1,6 @@
+<%= render "shared/header" %>
 <div class="wrapper">
 
-  <div class="header">
-    <h1>Skill Upper/ サイドバーのページ選択で変化</h1>
-  </div>
 
   <div class="container">
     <div class="side_bar">
@@ -11,14 +9,7 @@
           <li>menu</li>
         </ul>
 
-        <ul>
-          <% if user_signed_in? %>
-            <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %>さん /<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <% else %>
-            <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
-            <li><%= link_to '新規登録', new_user_registration_path, class: "sign_up" %> </li>
-          <% end %>
-        </ul>
+       
         <ul>
           <li>スキル一覧</li>
           <li>バディ検索</li>
