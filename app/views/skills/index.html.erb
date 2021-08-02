@@ -3,20 +3,7 @@
 
 
   <div class="container">
-    <div class="side_bar">
-      <div class="menu">
-        <ul>
-          <li>menu</li>
-        </ul>
-
-       
-        <ul>
-          <li>スキル一覧</li>
-          <li>バディ検索</li>
-          <li>バディチャット</li>
-        </ul>
-      </div>
-    </div>
+    <%= render "shared/sidebar" %>
     <div class="content">
       <%= link_to "スキルを追加する",   new_skill_path, class:"skill" %>
 
