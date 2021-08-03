@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_skill, only: [:show, :edit, :update, :destroy]
+  before_action :set_skill, only: [:show, :edit, :show, :update, :destroy]
   def index
     @skills = Skill.all.order('created_at DESC')
   

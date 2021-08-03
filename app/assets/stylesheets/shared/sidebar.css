@@ -2,14 +2,23 @@
 .side_bar {
   background-color: #d3d5d6;
   width: 250px;
-  height: 100vh;  
+  height: 1000vh;  
 }
 
 .menu-list {
   list-style: none;
+  padding: 2%;
+  margin: 0;
 }
 
 .menu {
   font-weight: bold;
   font-size: 32px;
+  text-align: center;
+}
+
+.list-item {
+  font-size: 20px;
+  padding:  10px;
+  margin-left: 20px;
 }

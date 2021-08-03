@@ -1,59 +1,63 @@
 <%= render "shared/header" %>
-<%= render "shared/sidebar" %>
-<div class="skills-set-contents">
-  <header class="skills-set-header">
-    <h1 class="skills-set-title">スキル登録画面</h1>
-  </header>
+<div class="main">
+  <div class="container">
+   <%= render "shared/sidebar" %>
+    <div class="skills-set-contents">
+      <header class="skills-set-header">
+        <h1 class="skills-set-title">スキル登録画面</h1>
+      </header>
 
-  <div class="skill-set-main">
-    <h2 class="skills-set-title">スキルの設定</h2>
+      <div class="skill-set-main">
+        <h2 class="skills-set-title">スキルの設定</h2>
 
-    <%= form_with(model: @skill, local: true) do |f| %>
-    <%#= render 'shared/error_messages', model: f.object %>
+        <%= form_with(model: @skill, local: true) do |f| %>
+        <%#= render 'shared/error_messages', model: f.object %>
 
-    <div class="img-upload">
-      <div class="weight-bold-text"> 
-        スキル画像
-        <span class="indispensable">任意</span>
-      </div>
-      <div class="click-upload">
-      <p>
-        クリックしてファイルをアップロード
-      </p>
-      <%= f.file_field :image, id:"skii-image" %>
-      </div>
-    </div>
-
-    <div class="new-skills">
-      <div class="weight-bold-text">
-        スキル名
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :name, class:"skills-text", id:"skill-name", placeholder:"スキル名（必須40文字まで）例）HTML", maxlength:"40" %>
-      
-      <div class="skill-explain">
-        <div class="weight-bold-text">
-          スキルのジャンル
-          <span class="indispensable">必須</span>
+        <div class="img-upload">
+          <div class="weight-bold-text"> 
+            スキル画像
+            <span class="indispensable">任意</span>
+          </div>
+          <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"skii-image" %>
+          </div>
         </div>
-      <%= f.text_field :genre, class:"skills-text", id:"skill-genre", placeholder:"スキルのジャンル（必須40文字まで）例）IT"%>
-        <div class="weight-bold-text">
-          何ができるようになりたい？
-          <span class="indispensable">必須</span>
+
+        <div class="new-skills">
+          <div class="weight-bold-text">
+            スキル名
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :name, class:"skills-text", id:"skill-name", placeholder:"スキル名（必須40文字まで）例）HTML", maxlength:"40" %>
+          
+          <div class="skill-explain">
+            <div class="weight-bold-text">
+              スキルのジャンル
+              <span class="indispensable">必須</span>
+            </div>
+          <%= f.text_field :genre, class:"skills-text", id:"skill-genre", placeholder:"スキルのジャンル（必須40文字まで）例）IT"%>
+            <div class="weight-bold-text">
+              何ができるようになりたい？
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_field :can, class:"skill-text", id:"skill-can", placeholder:"達成可能な目標（50文字まで）"%>
+          </div>
+          <div class-="weight-bold-text">
+            <span class="indispensable">登録直後の学習時間は0からです</span>
+            <%= f.hidden_field :total_minute,  class:"skill-text", id:"skill-total-minute" %>
+          </div>
         </div>
-        <%= f.text_field :can, class:"skill-text", id:"skill-can", placeholder:"達成可能な目標（50文字まで）"%>
-      </div>
-      <div class-="weight-bold-text">
-        <span class="indispensable">登録直後の学習時間は0からです</span>
-        <%= f.hidden_field :total_minute,  class:"skill-text", id:"skill-total-minute" %>
-      </div>
-    </div>
 
 
-    <div class="registration-btn-contents">
-      <%= f.submit "登録する" , class:"registration-btn" %>
-      <%= link_to '戻る', root_path, class:"back-btn" %>
+        <div class="registration-btn-contents">
+          <%= f.submit "登録する" , class:"registration-btn" %>
+          <%= link_to '戻る', root_path, class:"back-btn" %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
-  <% end %>
 </div>

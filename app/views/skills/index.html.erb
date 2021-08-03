@@ -1,39 +1,53 @@
 <%= render "shared/header" %>
-<div class="wrapper">
-
-
+<div class="main">
   <div class="container">
-    <%= render "shared/sidebar" %>
-    <div class="content">
-     
 
-   
-      <li class='list'>
+   <%= render "shared/sidebar" %>
+    <div class="skill-contents">
+    <ul class='skill-lists'>
+      
          <% @skills.each do |skill| %>
-         <%= skill.user.nickname %>
-          <%= link_to skill_path(skill.id) do %>
+         <li class='list'>
+            <div class='skill-info'>
+            <%= link_to skill_path(skill.id) do %>
+              <h1 class='skill-name'>
+                <%= skill.name %>
+              </h1>
             <div class='skill-img-content'>
              <%= image_tag(skill.image, class: "skill-img") %>
             </div>
-            <div class='skill-info'>
-            <h1 class='skill-name'>
-              <%= skill.name %>
-             </h1>
           <% end %>
-      
-      <h2 class='skill-total-time'>
-      学習時間
-          <%= skill.total_minute %>
-          分
-          </h2>
-         
-        <div class='skill-menu'>
-            <%= link_to "経験値の追加", new_skill_sum_exp_path(skill.id), class:"sum_exp-btn" %> 
+          <div class='study-info'>
+            <p class='skill-total-time'>
+             学習時間
+            <%= skill.total_minute %>
+             分
+            </p>
+             <p class='user-name'>ユーザー名:<%= skill.user.nickname %>さん</p>
+          </div>
+          <div class='skill-menu'>
+            <%= link_to "学習時間の追加", new_skill_sum_exp_path(skill.id), class:"sum_exp-btn" %> 
+          </div>
+          <% end %>
           </div>
       </li>
-      <% end %>
 
+      <% if @skills.length == 0 %>
+      <li class='list'>
+          <div class='skill-info'>
+            <%= link_to '#' do %>
+              <h1 class='skill-name'>
+                 スキルの名前 
+              </h1>
+               <div class='skill-img-content'>
+             <%= image_tag("images/index/study-boy.png", class: "skill-img") %>
+            </div>
+            <% end %>
+      </li>
+      <% end%>
+    </ul>
     </div>
+
   </div>
 
 </div>

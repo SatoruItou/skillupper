@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+ 
+}
+
+.skill-contents {
+  background-color:#FFF;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.skill-lists {
+  list-style: none;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skill-info {
+  background-color: #00aaff;
+  width: 200px;
+  margin: 10px;
+  padding: 1vh;
+}
+
+.skill-img-content {
+  position: relative;
+}
+
+.skill-img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+}
+
+
+.skill-name {
+  font-size: 18px;
+  margin-left: 50px; 
+}
+
+
+.user-name {
+  font-size: 2.5vh;
+}
