@@ -1,9 +1,10 @@
 class SkillsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_skill, only: [:show, :edit, :show, :update, :destroy]
+  before_action :unless_skill, only:[:edit, :update, :destroy]
   def index
     @skills = Skill.all.order('created_at DESC')
-  
+
   end
 
   def new
@@ -50,5 +51,9 @@ class SkillsController < ApplicationController
 
   def set_skill
     @skill = Skill.find(params[:id])
+  end
+
+  def unless_skill
+    redirect_to root_path unless current_user == @skill.user_id
   end
 end

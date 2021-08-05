@@ -15,7 +15,7 @@
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  float: left;
 }
 
 .skill-info {
@@ -38,10 +38,14 @@
 
 .skill-name {
   font-size: 18px;
-  margin-left: 50px; 
+  margin-left: 20px; 
 }
 
 
 .user-name {
   font-size: 2.5vh;
+}
+
+.total-minute {
+  text-align: right;
 }

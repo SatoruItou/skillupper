@@ -2,20 +2,35 @@
 <div class="main">
   <div class="container">
    <%= render "shared/sidebar" %>
-    <div class="skill-show">
-      <div class="skill-box">
-        <h2 class="name">
-        <%= @skill.name%>
-        </h2>
-        <div class="skill-img-content">
-          <%= image_tag @skill.image ,class:"skill-img" %>
-        </div>
+    <div class="skill-contents">
+      <ul class='skill-lists'>
+        <li class='list'>
+          <div class='skill-info'>
+            <h2 class="skill-name">
+              <%= @skill.name%>
+            </h2>
+            <div class="skill-img-content">
+               <%= image_tag @skill.image ,class:"skill-img" %>
+            </div>
+          <div class='study-info'>
+            <p class='skill-total-time'>
+               現在の総学習時間
+            </p>
+            <p class='total-minute'>
+              <%= @skill.total_minute %>分
+            </p>
+          </div>
+
           <% if current_user.id == @skill.user_id %>
             <%= link_to "編集", edit_skill_path(@skill.id), method: :get, class: "skill-red-btn" %>
             <%= link_to "削除", skill_path(@skill.id), method: :delete , class: "skill-destroy" %>
           <% end %>
+          
       </div>
-      <%= link_to '戻る', root_path, class:"back-btn" %>
+         <%= link_to '戻る', root_path, class:"back-btn" %>
+        </li>
+      </ul>
+   
     </div>
   </div>
 </div>

@@ -39,27 +39,17 @@
   padding: 2px;
 }
 
-.user-nickname {
+.user-nickname.sign-up {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
 }
 
-.logout {
+.logout.login {
   text-decoration: none;
   line-height: 32px;
   margin-left: 1vw;
   color: #333333;
 }
 
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
 
-.sign-up {
-  text-decoration: none;
-  color: #333333;
-}

@@ -1,36 +1,55 @@
-<div class='exp_sum-content'>
-  <li class='list'>
-    
+<%= render "shared/header" %>
+<div class='main'>
+  <div class="container">
+    <%= render "shared/sidebar" %>
+ 
+    <div class="skill-contents">
+     <ul class="skill-lists">
+       <li class='list'>
+        <h2 class='form-title'>フォームに学習時間を入力</h2>
+        <div class='skill-info'>
+          <h1 class='skill-name'>
+            <%= @skill.name %>
+          </h1>
+         
           <div class='skill-img-content'>
             <%= image_tag @skill.image, class: "skill-img" %>
           </div>
-          <div class='skill-info'>
-            <h1 class='skill-name'>
-              <%= @skill.name %>
-            </h1>
-
+          <div class='study-info'>
+            <p class='user-name'><%= @skill.user.nickname%>さんの
+           <p class='skill-total-time'>
+            現在の学習合計時間</p>
+            <p class='total-minute'>
+            <%= @skill.total_minute%>
+            分
+            </p>
           </div>
-  </li>
-
-  <div class='skills-exp-main'>
-    <h2 class='sum_exp-title'>フォームを入力して経験値を取得</h2>
-    <%= form_with model: @sum_exp, url: skill_sum_exps_path,  class:'transaction-form-wrap', local: true do |f| %>
-
-  <%#= render 'shared/error_message', model: f.object %>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">学習時間</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.number_field :minute, id:"minute" %>
-    </div>
     
-    <div class='sum-exp-btn'>
-      <%= f.submit "学習時間を追加する", class:"sum-exp-red-btn" %>
-    </div>
+        
+         <div class='skills-exp-main'>
+         
+        <%= form_with model: @sum_exp, url: skill_sum_exps_path,  class:'transaction-form-wrap', local: true do |f| %>
+        <%#= render 'shared/error_message', model: f.object %>
+        
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">学習時間</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.number_field :minute, id:"minute" %>
+        </div>
+        
+        <div class='sum-exp-btn'>
+        
+          <%= f.submit "学習時間を追加する", class:"sum-exp-red-btn" %>
+        </div>
+       </div>
+         <%= link_to '戻る', root_path, class:"back-btn" %>
+      </li>
     <% end %>
-   
+    
+    </ul>
+   </div>
     
   </div>
 </div>

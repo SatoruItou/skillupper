@@ -1,8 +1,14 @@
 class SumExpsController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:new]
+ 
   def new
+    
     @skill = Skill.find(params[:skill_id])
     @sum_exp = SumExp.new
+    unless @skill.user_id == current_user.id
+      redirect_to root_path
+    end
+  
   end
 
   def create
@@ -39,8 +45,8 @@ class SumExpsController < ApplicationController
     
 
   end
-  
 
-  
+
+
 end
 

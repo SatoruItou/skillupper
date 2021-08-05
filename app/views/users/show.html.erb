@@ -18,15 +18,32 @@
       </div>
       <div class="skill-content">
       <h3> スキル一覧</h3>
+       <ul class='skill-lists'>
         <% @skills.each do |skill| %>
-          <%= skill.name %>
-          <div class="skill-img-content">
-          <%= image_tag(skill.image, class: "skill-img") %>
+          <li class='list'>
+            <div class='skill-info'>
+               <h1 class='skill-name'>
+                    <%= skill.name %>
+                  </h1>
+                  <div class='skill-img-content'>
+                    <%= image_tag(skill.image, class: "skill-img") %>
+                  </div>
           
-        <% end %>
+                <div class='study-info'>
+                  <p class='user-name'>ユーザー名:<%= skill.user.nickname %>さんの</p>
+                  <p class='skill-total-time'>
+                    現在の学習合計時間
+                  </p>
+                  <p class='total-minute'>
+                     <%= skill.total_minute %>分
+                  </p>
+                </div>
+              </li>
+         <% end %>
+        </ul>
       </div>
       
       <%= link_to '戻る', root_path %>
-    </div>
+  
   </div>
 </div>
