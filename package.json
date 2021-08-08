@@ -6,7 +6,9 @@
     "@rails/activestorage": "^6.1.4",
     "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "4.3.0",
+    "glob-parent": "^5.1.2",
     "react": "^17.0.2",
+    "trim-newlines": "^1.0.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
