@@ -8,7 +8,7 @@
     "@rails/webpacker": "4.3.0",
     "glob-parent": "^5.1.2",
     "react": "^17.0.2",
-    "tar": "^4.4.15",
+    "tar": "^3.2.3",
     "trim-newlines": "^1.0.0",
     "turbolinks": "^5.2.0"
   },
