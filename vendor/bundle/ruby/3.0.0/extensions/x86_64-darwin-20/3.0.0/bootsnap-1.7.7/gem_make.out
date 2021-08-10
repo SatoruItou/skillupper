@@ -1,0 +1,15 @@
+current directory: /Users/noname/projects/skillupper/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.7/ext/bootsnap
+/Users/noname/.rbenv/versions/3.0.2/bin/ruby -I /Users/noname/.rbenv/versions/3.0.2/lib/ruby/3.0.0 -r ./siteconf20210809-7374-pvo5n1.rb extconf.rb
+creating Makefile
+
+current directory: /Users/noname/projects/skillupper/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.7/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/noname/projects/skillupper/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.7/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/noname/projects/skillupper/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.7/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210809-7374-ossw1u/bootsnap
