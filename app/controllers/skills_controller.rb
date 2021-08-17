@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_skill, only: [:show, :edit, :show, :update, :destroy]
+  before_action :set_skill, only: [:show, :edit, :update, :destroy]
   before_action :unless_skill, only:[:edit, :update, :destroy]
   def index
     @skills = Skill.all.order('created_at DESC')
@@ -36,7 +36,7 @@ class SkillsController < ApplicationController
   end 
    
   def destroy
-    @skill.delete
+    @skill.destroy
     redirect_to root_path
   end
 
@@ -54,6 +54,6 @@ class SkillsController < ApplicationController
   end
 
   def unless_skill
-    redirect_to root_path unless current_user == @skill.user_id
+    redirect_to action: :index unless current_user.id == @skill.user_id
   end
 end
